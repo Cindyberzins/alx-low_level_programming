@@ -1,8 +1,17 @@
+#include "main.h"
 #include <unistd.h>
 
-int main() {
-    const char str[] = "_putchar\n";
-    write(1, str, sizeof(str) - 1);
-    return 0;
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+    char *str = "_putchchar\n";
+    int len = 7; // Length of the string excluding null terminator
+
+    write(1, str, len);
+    return (0);
 }
 
