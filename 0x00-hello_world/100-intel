@@ -1,12 +1,2 @@
 #!/bin/bash
-if [ -z "$CFILE" ]; then
-	echo "Error: \$CFILE variable is not set."
-	exit 1
-fi
-FILENAME="${CFILE%.*}"
-gcc -S -masm=intel "$CFILE" -o "FILENAME.s"
-if [ $? -eq 0 ]; then
-	echo "Assebly code generated and saved as $FILENAME.s"
-else 
-	echo "Error generating assebly code."
-fi
+gcc -S -masm=intel "$CFILE" -o "${CFILE%.c}.s"
